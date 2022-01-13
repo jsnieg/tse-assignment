@@ -1,4 +1,4 @@
-# TSE Group 11 Assignment
+# CoughE - TSE Group 11
 
 ## Running Locally
 1. Pull changes (on develop!)
