@@ -4,8 +4,8 @@
 1. Pull changes (on develop!)
 2. Open the Project in Visual Studio
 3. Build the project
-4. Open the front-end in VS Code (the ./ClientApp directory)
-5. run `npm install` in ./ClientApps via command line
+4. Open the front-end in VS Code (`./ClientApp` directory)
+5. run `npm install` from `./ClientApps` directory via command line
 6. run the project from Visual Studio 
 
 The default debug bowser should open automatically.
