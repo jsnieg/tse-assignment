@@ -1,4 +1,4 @@
-# CoughE - TSE Group 11
+# KOUGH - TSE Group 11
 
 ## Running Locally
 1. Pull changes (on develop!)
