@@ -1,7 +1,7 @@
-# CoughE - TSE Group 11
+# KOUGH - TSE Group 11
 
 ## Running Locally
-1. Pull changes (on develop!)
+1. Pull changes
 2. Open the Project in Visual Studio
 3. Build the project
 4. Open the front-end in VS Code (`./ClientApp` directory)
