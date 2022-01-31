@@ -19,6 +19,11 @@ export class AudioRecorder extends Component {
         };
     }
 
+    handleAudioStop(data) {
+        console.log(data)
+        this.setState({ audioDetails: data });
+    }
+
     render() {
         return (
             <div>
@@ -26,6 +31,7 @@ export class AudioRecorder extends Component {
                     record={true}
                     title={"Record your voice"}
                     showUIAudio
+                    handleAudioStop={data => this.handleAudioStop(data)}
                     mimeTypeToUseWhenRecording={`audio/webm`}
                 />
             </div>
