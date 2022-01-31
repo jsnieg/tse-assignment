@@ -24,6 +24,10 @@ export class AudioRecorder extends Component {
         this.setState({ audioDetails: data });
     }
 
+    handleAudioUpload(file) {
+        console.log(file);
+    }
+
     handleReset() {
         const reset = {
             url: null,
@@ -46,6 +50,7 @@ export class AudioRecorder extends Component {
                     title={"Record your voice"}
                     showUIAudio
                     handleAudioStop={data => this.handleAudioStop(data)}
+                    handleAudioUpload={data => this.handleAudioUpload(data)}
                     handleReset={() => this.handleReset()}
                     mimeTypeToUseWhenRecording={`audio/webm`}
                 />
