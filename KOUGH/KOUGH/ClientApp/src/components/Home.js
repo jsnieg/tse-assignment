@@ -1,17 +1,20 @@
 ﻿import React, { Component } from 'react';
-import { AudioRecorder } from './AudioRecorder/AudioRecorder';
+import useRecorder from './Audio/useRecorder';
+import AudioRecorder from './Audio/AudioRecorder';
 
-export class Home extends Component {
-  static displayName = Home.name;
+export default function Home() {
+    const { recorderState, ...handlers } = useRecorder(); 
 
-  render () {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <div>
-          <AudioRecorder />
-        </div>
+        <section className='voice-recorder'>
+          <h1 className='title'>Voice Recorder</h1>
+          <div className='recorder-container'>
+            <AudioRecorder 
+              recorderState={recorderState}  
+              handlers={handlers} />
+          </div>
+        </section>
       </div>
     );
-  }
 }
