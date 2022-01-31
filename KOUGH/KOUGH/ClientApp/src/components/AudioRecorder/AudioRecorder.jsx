@@ -24,6 +24,20 @@ export class AudioRecorder extends Component {
         this.setState({ audioDetails: data });
     }
 
+    handleReset() {
+        const reset = {
+            url: null,
+            blob: null,
+            chunks: null,
+            duration: {
+                h: 0,
+                m: 0,
+                s: 0
+            }
+        };
+        this.setState({ audioDetails: reset });
+    }
+
     render() {
         return (
             <div>
@@ -32,6 +46,7 @@ export class AudioRecorder extends Component {
                     title={"Record your voice"}
                     showUIAudio
                     handleAudioStop={data => this.handleAudioStop(data)}
+                    handleReset={() => this.handleReset()}
                     mimeTypeToUseWhenRecording={`audio/webm`}
                 />
             </div>
