@@ -8,7 +8,6 @@ export default function Home() {
     return (
       <div>
         <section className='voice-recorder'>
-          <h1 className='title'>Voice Recorder</h1>
           <div className='recorder-container'>
             <AudioRecorder 
               recorderState={recorderState}  
