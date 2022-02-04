@@ -30,7 +30,9 @@ export default function useRecorder() {
   }
   
   const saveRecording = (recorder) => {
-    if (recorder.state !== "inactive") recorder.stop();
+    if (recorder.state !== "inactive") {
+      recorder.stop();
+    }
   }
 
   useEffect(() => {
@@ -40,29 +42,35 @@ export default function useRecorder() {
     if (recorderState.initRecording)
       recordingInterval = setInterval(() => {
         setRecorderState((prevState) => {
-          if (
-            prevState.recordingMinutes === MAX_RECORDER_TIME &&
-            prevState.recordingSeconds === 0
-          ) {
+          if (prevState.recordingMinutes === MAX_RECORDER_TIME &&
+              prevState.recordingSeconds === 0) 
+          {
             clearInterval(recordingInterval);
             return prevState;
           }
 
-          if (prevState.recordingSeconds >= 0 && prevState.recordingSeconds < 59)
+          if (prevState.recordingSeconds >= 0 && 
+              prevState.recordingSeconds < 59) {
             return {
               ...prevState,
               recordingSeconds: prevState.recordingSeconds + 1,
             };
+          }
 
           if (prevState.recordingSeconds === 59)
+          {
             return {
-              ...prevState,
-              recordingMinutes: prevState.recordingMinutes + 1,
-              recordingSeconds: 0,
+            ...prevState,
+            recordingMinutes: prevState.recordingMinutes + 1,
+            recordingSeconds: 0,
             };
+          }
         });
       }, 1000);
-    else clearInterval(recordingInterval);
+    else 
+    {
+      clearInterval(recordingInterval);
+    }
 
     return () => clearInterval(recordingInterval);
   });
@@ -104,7 +112,12 @@ export default function useRecorder() {
     }
 
     return () => {
-      if (recorder) recorder.stream.getAudioTracks().forEach((track) => track.stop());
+      if (recorder) {
+        recorder
+          .stream
+            .getAudioTracks()
+            .forEach((track) => track.stop());
+      }
     };
   }, [recorderState.mediaRecorder]);
 
