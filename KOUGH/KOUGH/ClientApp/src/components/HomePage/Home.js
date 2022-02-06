@@ -9,56 +9,51 @@ export default function Home() {
   return (
     <div>
       <section className='top-part'>
-        <div className='title-container'>
-          <h1 className='title'>
-            COVID-19 and Asthma App
-          </h1>
-        </div>
+          <div className='title-container'>
+            <h1 className='title'>
+              COVID-19 and Asthma App
+            </h1>
+          </div>
 
-        <div className='list-container'>
-          <ul>
+          <div className='list-container'>
+            <ul className='list'>
 
-            <li className='text-list'>
-              <div className='icon-container'>
-                <button className='btn-primary icon'>
-                  <i class="fas fa-virus"></i>
-                </button>
-              </div>
-              <div className='text-container'>
-                <p>
-                  list item 1
-                </p>
-              </div>
-            </li>
+              <li className='text-list'>
+                <div className='icon-container'>
+                    <i class="fas fa-virus icon"></i>
+                </div>
+                <div className='text-container'>
+                  <p>
+                    Info about the app ksndflknsdfs sdn lsdng sdmv ld;sd ls;s dl sd  sd lvnsld nsdn lsdnl sdv sdl vnsldn 
+                  </p>
+                </div>
+              </li>
 
-            <li className='text-list'>
-              <div className='icon-container'>
-                <button className='btn-primary icon'>
-                  <i class="fas fa-virus"></i>
-                </button>
-              </div>
-              <div className='text-container'>
-                <p>
-                  list item 2
-                </p>
-              </div>
-            </li>
-            
-            <li className='text-list'>
-              <div className='icon-container'>
-                <button className='btn-primary icon'>
-                  <i class="fas fa-virus"></i>
-                </button>
-              </div>
-              <div className='text-container'>
-                <p>
-                  list item 3
-                </p>
-              </div>
-            </li>
+              <li className='text-list'>
+                <div className='icon-container'>
+                    <i class="fas fa-lungs-virus icon"></i>
+                </div>
+                <div className='text-container'>
+                  <p>
+                  Info about the app ksndflknsdfs sdn lsdng sdmv ld;sd ls;s dl sd  sd lvnsld nsdn lsdnl sdv sdl vnsldn 
+                  </p>
+                </div>
+              </li>
+              
+              <li className='text-list'>
+                <div className='icon-container'>
+                    <i class="fas fa-virus icon"></i>
+                </div>
+                <div className='text-container'>
+                  <p>
+                  Info about the app ksndflknsdfs sdn lsdng sdmv ld;sd ls;s dl sd  sd lvnsld nsdn lsdnl sdv sdl vnsldn 
+                  </p>
+                </div>
+              </li>
 
-          </ul>
-        </div>
+            </ul>
+          </div>
+        
       </section>
 
       <section className='voice-recorder'>
