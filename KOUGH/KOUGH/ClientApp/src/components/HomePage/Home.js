@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <section className='top-part'>
-          <div className='title-container'>
+          <div className='title-container center'>
             <h1 className='title'>
               COVID-19 and Asthma App
             </h1>
@@ -55,6 +55,14 @@ export default function Home() {
           </div>
         
       </section>
+      <div className='title-container center'>
+        <h4 className='recorder-title'>
+          Please Say...
+        </h4>
+      </div>
+      <div className='center'>
+        <p>"Hello, I have Coronavirus!"</p>
+      </div>
 
       <section className='voice-recorder'>
         <div className='recorder-container'>

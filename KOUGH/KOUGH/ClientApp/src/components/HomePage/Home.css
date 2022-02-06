@@ -3,11 +3,6 @@
   width: 100%;
 }
 
-.title-container {
-  display: table;
-  margin: 0 auto;
-}
-
 .list {
   width: 100%;
   display: grid;
@@ -31,6 +26,11 @@
   background-size: cover;
 }
 
+.recorder-title {
+  margin: 40px auto 15px auto;
+  color: #888888a9;
+}
+
 .list-container {
   margin: 20px 5px auto 5px;
   padding: 10px;
@@ -38,7 +38,12 @@
   border-radius: 15px;
 }
 .voice-recorder {
-  margin: 40px auto;
+  margin: 5px auto 40px auto;
+}
+
+.center {
+  display: table;
+  margin: 0 auto;
 }
 
 .icon {
