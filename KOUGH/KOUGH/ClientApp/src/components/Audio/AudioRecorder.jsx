@@ -29,7 +29,7 @@ export default function AudioRecorder({ recorderState, handlers }) {
                             className="cancel-button"
                             title="Cancel recording"
                             onClick={cancelRecording}
-                        ><i class="fas fa-trash"></i>
+                        ><i className="fas fa-trash"></i>
                         </button>
                     </div>
                 )}
@@ -41,7 +41,7 @@ export default function AudioRecorder({ recorderState, handlers }) {
                             title="Save recording"
                             disabled={recordingSeconds === 0}
                             onClick={saveRecording}
-                        ><i class="far fa-save"></i>
+                        ><i className="far fa-save"></i>
                         </button>
                     </div>
                     
@@ -51,7 +51,7 @@ export default function AudioRecorder({ recorderState, handlers }) {
                             className="btn-primary start-button"
                             title="Start recording"
                             onClick={startRecording}
-                        ><i class="fas fa-microphone"></i>
+                        ><i className="fas fa-microphone"></i>
                         </button>
                     </div>
                     )

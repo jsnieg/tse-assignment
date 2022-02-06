@@ -11,21 +11,6 @@
   padding: 20px 0px;
 }
 
-.shadowing {
-  min-height: 100%;
-  /* background-image: linear-gradient(
-    -180deg,
-    rgba(202, 202, 202, 0.21) 0%,
-    rgba(202, 202, 202, 0.03) 77%,
-    rgba(155, 154, 155, 0.04) 100%
-  ); */
-  position: relative;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .recorder-title {
   margin: 40px auto 15px auto;
   color: #888888a9;
