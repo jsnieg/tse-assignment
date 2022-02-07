@@ -8,7 +8,7 @@
   display: grid;
   align-items: center;
   justify-content: center;
-  padding: 20px 0px;
+  padding: 20px 0px 0px 0px;
 }
 
 .recorder-title {
@@ -17,7 +17,7 @@
 }
 
 .list-container {
-  margin: 20px 5px auto 5px;
+  margin: 20px 30px auto 30px;
   padding: 10px;
   box-shadow: 1px 1px 10px #888888;
   border-radius: 15px;
@@ -37,7 +37,7 @@
 
 .icon-container {
   display: table;
-  margin: 0px 15px;
+  margin: 0px 15px 0px 0px;
   position: relative;
 }
 
@@ -52,4 +52,16 @@ li.no-bullets {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+@media only screen and (min-width: 1200px) {
+  .list-container {
+    margin: 20px 120px 0px 120px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .icon-container {
+    margin: 0px 15px;
+  }
 }
