@@ -24,7 +24,7 @@ export default function AudioRecorder({ recorderState, handlers }) {
 
             <div className="control-button-container">
                 { initRecording && (
-                    <div className="cancel-button-container">
+                    <div className="cancel-button-container center">
                         <button
                             className="cancel-button"
                             title="Cancel recording"
@@ -35,7 +35,7 @@ export default function AudioRecorder({ recorderState, handlers }) {
                 )}
                 
                 { initRecording ? (
-                    <div className="save-button-container">
+                    <div className="save-button-container center">
                         <button
                             className="btn-primary start-button"
                             title="Save recording"
@@ -46,7 +46,7 @@ export default function AudioRecorder({ recorderState, handlers }) {
                     </div>
                     
                     ) : (
-                    <div className="start-button-container">
+                    <div className=".start-button-container center">
                         <button
                             className="btn-primary start-button"
                             title="Start recording"
