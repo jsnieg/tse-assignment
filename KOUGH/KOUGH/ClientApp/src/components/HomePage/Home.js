@@ -19,8 +19,8 @@ export default function Home() {
             <ul className='list'>
 
               <li className='text-list'>
-                <div className='icon-container'>
-                    <i className='fas fa-virus icon'></i>
+                <div className='icon-container center'>
+                  <i className='fas fa-virus center icon'></i>
                 </div>
                 <div className='text-container'>
                   <p>
@@ -30,8 +30,8 @@ export default function Home() {
               </li>
 
               <li className='text-list'>
-                <div className='icon-container'>
-                    <i className="fas fa-lungs-virus icon"></i>
+                <div className='icon-container center'>
+                  <i className="fas fa-shield-virus center icon"></i>
                 </div>
                 <div className='text-container'>
                   <p>
@@ -42,7 +42,7 @@ export default function Home() {
               
               <li className='text-list'>
                 <div className='icon-container'>
-                    <i className="fas fa-virus icon"></i>
+                  <i className="fas fa-lungs-virus center icon"></i>
                 </div>
                 <div className='text-container'>
                   <p>
