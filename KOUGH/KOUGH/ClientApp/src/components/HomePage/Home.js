@@ -24,7 +24,7 @@ export default function Home() {
                 </div>
                 <div className='text-container'>
                   <p>
-                    Info about the app ksndflknsdfs sdn lsdng sdmv ld;sd ls;s dl sd  sd lvnsld nsdn lsdnl sdv sdl vnsldn 
+                    COVID-19 and worsening Asthma symptoms are indistinguishable, can you tell the difference?  
                   </p>
                 </div>
               </li>
@@ -35,7 +35,7 @@ export default function Home() {
                 </div>
                 <div className='text-container'>
                   <p>
-                  Info about the app ksndflknsdfs sdn lsdng sdmv ld;sd ls;s dl sd  sd lvnsld nsdn lsdnl sdv sdl vnsldn 
+                    This app records your breathing and voice to differentiate between the two.  
                   </p>
                 </div>
               </li>
@@ -46,7 +46,7 @@ export default function Home() {
                 </div>
                 <div className='text-container'>
                   <p>
-                  Info about the app ksndflknsdfs sdn lsdng sdmv ld;sd ls;s dl sd  sd lvnsld nsdn lsdnl sdv sdl vnsldn 
+                    Click the blue microphone to record.  
                   </p>
                 </div>
               </li>
