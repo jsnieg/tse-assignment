@@ -24,34 +24,34 @@ export default function AudioRecorder({ recorderState, handlers }) {
 
             <div className="control-button-container">
                 { initRecording && (
-                    <div className="cancel-button-container">
+                    <div className="cancel-button-container center">
                         <button
                             className="cancel-button"
                             title="Cancel recording"
                             onClick={cancelRecording}
-                        ><i class="fas fa-trash"></i>
+                        ><i className="fas fa-trash"></i>
                         </button>
                     </div>
                 )}
                 
                 { initRecording ? (
-                    <div className="save-button-container">
+                    <div className="save-button-container center">
                         <button
                             className="btn-primary start-button"
                             title="Save recording"
                             disabled={recordingSeconds === 0}
                             onClick={saveRecording}
-                        ><i class="far fa-save"></i>
+                        ><i className="far fa-save"></i>
                         </button>
                     </div>
                     
                     ) : (
-                    <div className="start-button-container">
+                    <div className=".start-button-container center">
                         <button
                             className="btn-primary start-button"
                             title="Start recording"
                             onClick={startRecording}
-                        ><i class="fas fa-microphone"></i>
+                        ><i className="fas fa-microphone"></i>
                         </button>
                     </div>
                     )

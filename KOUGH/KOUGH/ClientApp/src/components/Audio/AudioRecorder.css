@@ -1,13 +1,4 @@
-.controls-container {
-  display: block;
-  justify-content: center;
-  padding: 10px;
-}
-
 .recorder-display {
-  width: 100%;
-  display: grid;
-  align-items: center;
   font-size: 2rem;
 }
 
@@ -23,61 +14,83 @@
 }
 
 .recording-time {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.start-button,
-.cancel-button {
-  border: none;
-  border-radius: 50%;
-  background-color: #fff;
-  cursor: pointer;
+/*  Containers   */
+
+.controls-container {
+  padding: 10px;
 }
 
 .control-button-container {
-  width: 100%;
-  margin-top: 5px;
-  position: relative;
   display: flex;
+  margin-top: 10px;
 }
 
-/* Cancel btn */
-
-.cancel-button {
-  width: 50px;
-  height: 50px;
+.start-button-container,
+.save-button-container,
+.cancel-button-container {
+  position: relative;
 }
 
 .cancel-button-container {
-  display: table;
-  margin: 0 auto;
-  position: relative;
   animation-name: animated-block;
   animation-duration: 2s;
 }
 
-.cancel-button:hover {
-  color: #fd1c03;
-}
+/*  Control Buttons  */
 
-/* Start btn */
+.start-button,
+.cancel-button {
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
 .start-button {
   width: 40px;
   height: 40px;
 }
 
-.start-button-container,
-.save-button-container {
-  display: table;
-  margin: 0 auto;
-  position: relative;
+.cancel-button {
+  width: 40px;
+  height: 40px;
+}
+
+.cancel-button:hover {
+  color: #fd1c03;
 }
 
 .start-button:hover {
   color: #41295a;
-  background-color: #f2ea02;
+  background-color: #62f202;
+}
+
+/*  Media Calls for control buttons container  */
+
+@media only screen and (min-width: 1200px) {
+  .control-button-container {
+    margin: 10px 350px 0px 350px;
+  }
+}
+
+@media only screen and (min-width: 990px) and (max-width: 1200px) {
+  .control-button-container {
+    margin: 10px 280px 0px 280px;
+  }
+}
+
+@media only screen and (min-width: 680px) and (max-width: 990px) {
+  .control-button-container {
+    margin: 10px 150px 0px 150px;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 680px) {
+  .control-button-container {
+    margin: 10px 50px 0px 50px;
+  }
 }
