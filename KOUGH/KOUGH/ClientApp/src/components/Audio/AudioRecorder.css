@@ -1,0 +1,96 @@
+.recorder-display {
+  font-size: 2rem;
+}
+
+.recording-indicator {
+  width: 10px;
+  height: 10px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background-color: #099fff;
+  animation-name: animated-block;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.recording-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*  Containers   */
+
+.controls-container {
+  padding: 10px;
+}
+
+.control-button-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.start-button-container,
+.save-button-container,
+.cancel-button-container {
+  position: relative;
+}
+
+.cancel-button-container {
+  animation-name: animated-block;
+  animation-duration: 2s;
+}
+
+/*  Control Buttons  */
+
+.start-button,
+.cancel-button {
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.start-button {
+  width: 40px;
+  height: 40px;
+}
+
+.cancel-button {
+  width: 40px;
+  height: 40px;
+}
+
+.cancel-button:hover {
+  color: #fd1c03;
+}
+
+.start-button:hover {
+  color: #41295a;
+  background-color: #62f202;
+}
+
+/*  Media Calls for control buttons container  */
+
+@media only screen and (min-width: 1200px) {
+  .control-button-container {
+    margin: 10px 350px 0px 350px;
+  }
+}
+
+@media only screen and (min-width: 990px) and (max-width: 1200px) {
+  .control-button-container {
+    margin: 10px 280px 0px 280px;
+  }
+}
+
+@media only screen and (min-width: 680px) and (max-width: 990px) {
+  .control-button-container {
+    margin: 10px 150px 0px 150px;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 680px) {
+  .control-button-container {
+    margin: 10px 50px 0px 50px;
+  }
+}
