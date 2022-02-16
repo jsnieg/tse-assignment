@@ -14,10 +14,10 @@ export default class App extends Component {
       <Layout>
         <Route exact path='/'>
           <Home />
-            </Route>
-            <Route exact path='/Privacy'>
-                <Privacy />
-                </Route>
+        </Route>
+        <Route exact path='/Privacy'>
+          <Privacy />
+        </Route>
       </Layout>
     );
   }
