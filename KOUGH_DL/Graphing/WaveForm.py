@@ -15,9 +15,13 @@ COVID_POSITIVE_PATH = "../Train/covid-positive/covid-positive.wav"
 COVID_NEGATIVE_PATH = "../Train/covid-negative/covid-negative.wav"
 
 # covid positive waveform
-signal, sr = librosa.load(Constants.COVID_POSITIVE_PATH, sr=22050)
-waveform(signal, sr, "Time", "Amplitude")
+waveform(Constants.COVID_POS_SIGNAL,
+         Constants.COVID_POS_SR,
+         "Time",
+         "Amplitude")
 
 # covid negative waveform
-signal, sr = librosa.load(Constants.COVID_NEGATIVE_PATH, sr=22050)
-waveform(signal, sr, "Time", "Amplitude")
+waveform(Constants.COVID_NEG_SIGNAL,
+         Constants.COVID_NEG_SR,
+         "Time",
+         "Amplitude")

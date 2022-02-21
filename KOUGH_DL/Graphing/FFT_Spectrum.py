@@ -25,10 +25,15 @@ def calc_FFT(signal, sr):
     return left_frequency, left_magnitude
 
 
-signal, sr = librosa.load(Constants.COVID_POSITIVE_PATH, sr=22050)
-frequency, magnitude = calc_FFT(signal, sr)
+frequency, magnitude = calc_FFT(
+    Constants.COVID_POS_SIGNAL,
+    Constants.COVID_POS_SR)
+
 FFT_graph(frequency, magnitude)
 
-signal, sr = librosa.load(Constants.COVID_NEGATIVE_PATH, sr=22050)
-frequency, magnitude = calc_FFT(signal, sr)
+
+frequency, magnitude = calc_FFT(
+    Constants.COVID_NEG_SIGNAL,
+    Constants.COVID_NEG_SR)
+
 FFT_graph(frequency, magnitude)
