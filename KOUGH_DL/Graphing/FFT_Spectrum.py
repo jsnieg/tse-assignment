@@ -4,14 +4,14 @@ import matplotlib.pyplot
 import Constants
 
 
-def FFT_graph(left_frequency, left_magnitude):
+def FFT_Graph(left_frequency, left_magnitude):
     matplotlib.pyplot.plot(left_frequency, left_magnitude)
     matplotlib.pyplot.xlabel("Frequency")
     matplotlib.pyplot.ylabel("Magnitude")
     matplotlib.pyplot.show()
 
 
-def calc_FFT(signal, sr):
+def Calc_FFT(signal, sr):
     #  Fast Fourier Transform (fft) -> Spectrum
     fft = np.fft.fft(signal)
     magnitude = np.abs(fft)
@@ -25,15 +25,15 @@ def calc_FFT(signal, sr):
     return left_frequency, left_magnitude
 
 
-frequency, magnitude = calc_FFT(
+frequency, magnitude = Calc_FFT(
     Constants.COVID_POS_SIGNAL,
     Constants.COVID_POS_SR)
 
-FFT_graph(frequency, magnitude)
+FFT_Graph(frequency, magnitude)
 
 
-frequency, magnitude = calc_FFT(
+frequency, magnitude = Calc_FFT(
     Constants.COVID_NEG_SIGNAL,
     Constants.COVID_NEG_SR)
 
-FFT_graph(frequency, magnitude)
+FFT_Graph(frequency, magnitude)
