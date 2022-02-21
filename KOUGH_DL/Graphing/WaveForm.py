@@ -11,9 +11,6 @@ def DisplayWaveForm(signal, sr, x_axis, y_axis):
     matplotlib.pyplot.show()
 
 
-COVID_POSITIVE_PATH = "../Train/covid-positive/covid-positive.wav"
-COVID_NEGATIVE_PATH = "../Train/covid-negative/covid-negative.wav"
-
 # covid positive waveform
 DisplayWaveForm(
     Constants.COVID_POS_SIGNAL,
