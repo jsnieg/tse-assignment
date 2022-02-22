@@ -5,7 +5,12 @@ import Constants as const
 
 
 def DisplayMel(MFCCs, sr, hop_length):
-    librosa.display.specshow(MFCCs, sr=sr, hop_length=hop_length)
+    librosa.display.specshow(
+        data=MFCCs,
+        sr=sr,
+        hop_length=hop_length
+    )
+
     matplotlib.pyplot.xlabel("Time (s)")
     matplotlib.pyplot.ylabel("MFCC")
     matplotlib.pyplot.colorbar()
@@ -16,7 +21,7 @@ SR = [const.COVID_NEG_SR, const.COVID_POS_SR]
 SIGNAL = [const.COVID_NEG_SIGNAL, const.COVID_POS_SIGNAL]
 
 for i in range(0, len(SR)):
-    # MFCCs -> Mel-frequency cepstral coefficients
+    # MFCCs -> Mel-Frequency Cepstral Coefficients
     MFCCs = librosa.feature.mfcc(
         y=SIGNAL[i],
         n_fft=const.N_SAMPLES_PER_FFT,
