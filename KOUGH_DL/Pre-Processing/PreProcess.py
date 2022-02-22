@@ -2,9 +2,11 @@ import math
 import os
 import librosa
 import Constants as const
+import FileService
 
 
 def CreateMFCCs(dataset_path,
+                json_path,
                 n_MFCC,
                 n_FFT,
                 hopLength,
@@ -61,10 +63,13 @@ def CreateMFCCs(dataset_path,
                     data["labels"].append(i-1)
                     print("{}, segment:{}".format(path, segment))
 
+    FileService.write_json(json_path, data)
+
 
 if __name__ == "__main__":
     CreateMFCCs(
         const.DATASET_PATH,
+        const.JSON_PATH,
         n_MFCC=13,
         n_FFT=2048,
         hopLength=512,

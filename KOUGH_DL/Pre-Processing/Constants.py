@@ -1,4 +1,5 @@
 DATASET_PATH = "../Train"
+JSON_PATH = "data.json"
 
 SAMPLE_RATE = 22050
 DURATION = 30  # in seconds
