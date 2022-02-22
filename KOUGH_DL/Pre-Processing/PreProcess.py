@@ -25,8 +25,8 @@ def CreateMFCCs(dataset_path,
         numSamplesPerSegment / hopLength)
 
     # iterate through directories
-    i = 0
-    for dirpath, dirnames, filenames in os.walk(dataset_path):
+
+    for i, (dirpath, dirnames, filenames) in enumerate(os.walk(dataset_path)):
         # don't bother with root dataset dir
         if (dirpath == dataset_path):
             continue
@@ -64,7 +64,6 @@ def CreateMFCCs(dataset_path,
                     print("{}, segment:{}".format(path, segment))
 
     FileService.write_json(json_path, data)
-    i += 1
 
 
 if __name__ == "__main__":
