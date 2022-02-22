@@ -64,6 +64,7 @@ def CreateMFCCs(dataset_path,
                     print("{}, segment:{}".format(path, segment))
 
     FileService.write_json(json_path, data)
+    i += 1
 
 
 if __name__ == "__main__":
