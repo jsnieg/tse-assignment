@@ -1,6 +1,0 @@
-DATASET_PATH = "../Train"
-JSON_PATH = "data.json"
-
-SAMPLE_RATE = 22050
-DURATION = 30  # in seconds
-SAMPLES_PER_TRACK = SAMPLE_RATE * DURATION
