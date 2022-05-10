@@ -12,23 +12,26 @@ n_FFT = 2048
 
 
 def getLabel(metadata):
-    label = 0
     status = metadata['covid_status']
+    covid_positive = not ((status == 'healthy') or (status == 'no_resp_illness_exposed'))
+    has_asthma = False
+
     try:
-        if metadata['asthma'] == 'True':
-            # has asthma
-            if status == 'healthy' or status == 'no_resp_illness_exposed':
-                return 1
-            return 3
+        has_asthma = metadata['asthma'] == 'True'
     except:
-        label = 0
-    try:
-        if status == 'healthy' or status == 'no_resp_illness_exposed':
-            return 0
-        else:
+        if covid_positive:
             return 2
-    except:
-        return 4
+        else:
+            return 0
+
+    
+    if has_asthma:
+        if not covid_positive:
+            return 1
+        return 3
+   
+    return 4
+
 
 
 def SaveSpectrogram(filename, log_spectrogram, sr):
@@ -108,50 +111,16 @@ def preProcess(dataset_path):
 
                 except:
                     print("\nError processing")
-                    continue   
-
-            # if str(file) == 'breathing-deep.wav':
-            #     try:
-            #         # load audio using librosa
-            #         signal, sampleRate = librosa.load(path, sr=SAMPLE_RATE)
-            #         # perform stft
-            #         log_spectrogram = librosa.amplitude_to_db(
-            #             np.abs(
-            #                 STFT(
-            #                     signal,
-            #                     HOP_LENGTH,
-            #                     2048
-            #                 )
-            #             )
-            #         )
-            #         print(label)
-            #         file_path = "../images/{}/{}".format(data["mapping"][label], i)
-            #         file_p = "../images/{}".format(data["mapping"][label])
-            #         print(file_p)
-                    
-            #         SaveSpectrogram(
-            #             file_path,
-            #             log_spectrogram,
-            #             sampleRate,
-            #         )
-            #         print("saved")
-
-            #         # store label
-            #         data["labels"].append(label)
-
-            #     except:
-            #         print("\nError processing")
-            #         continue                
+                    continue     
 
     return data
 
 
 # pre-process only breathing-heavily.wav for training
-training_dataset_path = '../CoronaHack-Respiratory-Sound-Dataset/data/train'
+training_dataset_path = '../Data/CoronaHack-Respiratory-Sound-Dataset/data/train'
 train_data = preProcess(training_dataset_path)
 
 # pre-process only breathing-heavily.wav for testing
-test_dataset_path = '../CoronaHack-Respiratory-Sound-Dataset/data/test'
+test_dataset_path = '../Data/CoronaHack-Respiratory-Sound-Dataset/data/test'
 test_data = preProcess(test_dataset_path)
-
 

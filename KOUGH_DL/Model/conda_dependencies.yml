@@ -4,5 +4,7 @@ dependencies:
 - python=3.6.2
 - pip:
   - azureml-defaults
-  - tensorflow-gpu==2.2.0
+  - tensorflow-gpu==2.5.0
+  - keras==2.4.3
+  - keras-preprocessing==1.1.2
   - numpy==1.19.5
