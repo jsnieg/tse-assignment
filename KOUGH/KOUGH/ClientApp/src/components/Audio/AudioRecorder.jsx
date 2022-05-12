@@ -15,21 +15,29 @@ export default function AudioRecorder({ recorderState, handlers }) {
                     <div className="recording-indicator"></div>
                 }
 
-                <span> { recordingMinutes < 10 ? `0${recordingMinutes}` : recordingMinutes } </span>
+                <span aria-label="recording minutes"> 
+                    { recordingMinutes < 10 ? `0${recordingMinutes}` : recordingMinutes } 
+                </span>
+
                 <span>:</span>
-                <span> { recordingSeconds < 10 ? `0${recordingSeconds}` : recordingSeconds } </span>
+                
+                <span aria-label="recording seconds"> 
+                    { recordingSeconds < 10 ? `0${recordingSeconds}` : recordingSeconds } 
+                </span>
                 
                 </div>
             </div>
 
-            <div className="control-button-container">
+            <div aria-label="controls" 
+                 className="control-button-container">
+
                 { initRecording && (
                     <div className="cancel-button-container center">
                         <button
                             className="cancel-button"
                             title="Cancel recording"
                             onClick={cancelRecording}
-                        ><i className="fas fa-trash"></i>
+                        ><i aria-label="icon" className="fas fa-trash"></i>
                         </button>
                     </div>
                 )}
@@ -41,7 +49,7 @@ export default function AudioRecorder({ recorderState, handlers }) {
                             title="Save recording"
                             disabled={recordingSeconds === 0}
                             onClick={saveRecording}
-                        ><i className="far fa-save"></i>
+                        ><i aria-label="icon" className="far fa-save"></i>
                         </button>
                     </div>
                     
@@ -51,7 +59,7 @@ export default function AudioRecorder({ recorderState, handlers }) {
                             className="btn-primary start-button"
                             title="Start recording"
                             onClick={startRecording}
-                        ><i className="fas fa-microphone"></i>
+                        ><i aria-label="icon" className="fas fa-microphone"></i>
                         </button>
                     </div>
                     )
