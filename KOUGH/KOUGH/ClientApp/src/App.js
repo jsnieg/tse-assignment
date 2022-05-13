@@ -1,9 +1,8 @@
-﻿import React, { Component } from 'react';
+import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout';
-import Home from './components/Home';
+import Home from './components/HomePage/Home';
 import Privacy from './components/Privacy';
-
 import './custom.css'
 
 export default class App extends Component {
@@ -14,10 +13,10 @@ export default class App extends Component {
       <Layout>
         <Route exact path='/'>
           <Home />
-            </Route>
-            <Route exact path='/Privacy'>
-                <Privacy />
-                </Route>
+        </Route>
+        <Route exact path='/Privacy'>
+          <Privacy />
+        </Route>
       </Layout>
     );
   }
