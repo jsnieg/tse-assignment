@@ -3,7 +3,7 @@ import './AudioRecorder.css';
 import '../../custom.css';
 
 export default function AudioRecorder({ recorderState, handlers }) {
-    const { recordingMinutes, recordingSeconds, initRecording } = recorderState;
+    const { recordingMinutes, recordingSeconds, isRecording } = recorderState;
     const { startRecording, saveRecording, cancelRecording } = handlers;
 
     return (
@@ -11,17 +11,17 @@ export default function AudioRecorder({ recorderState, handlers }) {
             <div className="recorder-display">
                 <div className="recording-time">
                 {
-                    initRecording &&
+                    isRecording &&
                     <div className="recording-indicator"></div>
                 }
 
-                <span aria-label="recording minutes"> 
+                <span aria-label="recording-minutes"> 
                     { recordingMinutes < 10 ? `0${recordingMinutes}` : recordingMinutes } 
                 </span>
 
                 <span>:</span>
                 
-                <span aria-label="recording seconds"> 
+                <span aria-label="recording-seconds"> 
                     { recordingSeconds < 10 ? `0${recordingSeconds}` : recordingSeconds } 
                 </span>
                 
@@ -31,33 +31,35 @@ export default function AudioRecorder({ recorderState, handlers }) {
             <div aria-label="controls" 
                  className="control-button-container">
 
-                { initRecording && (
+                { isRecording && (
                     <div className="cancel-button-container center">
                         <button
                             className="cancel-button"
                             title="Cancel recording"
+                            aria-label="cancel-button"
                             onClick={cancelRecording}
                         ><i aria-label="icon" className="fas fa-trash"></i>
                         </button>
                     </div>
                 )}
                 
-                { initRecording ? (
+                { isRecording ? (
                     <div className="save-button-container center">
                         <button
                             className="btn-primary start-button"
                             title="Save recording"
+                            aria-label="save-button"
                             disabled={recordingSeconds === 0}
                             onClick={saveRecording}
                         ><i aria-label="icon" className="far fa-save"></i>
                         </button>
                     </div>
-                    
                     ) : (
                     <div className=".start-button-container center">
                         <button
                             className="btn-primary start-button"
                             title="Start recording"
+                            aria-label="start-button"
                             onClick={startRecording}
                         ><i aria-label="icon" className="fas fa-microphone"></i>
                         </button>

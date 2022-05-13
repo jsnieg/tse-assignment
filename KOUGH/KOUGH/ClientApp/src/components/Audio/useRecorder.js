@@ -3,24 +3,25 @@ import { useState, useEffect } from "react";
 const initialState = {
   recordingMinutes: 0,
   recordingSeconds: 0,
-  initRecording: false,
+  isRecording: false,
   mediaStream: null,
   mediaRecorder: null,
   audio: null,
 }
 
-export default function useRecorder() {
+const useRecorder = () => {
   const [recorderState, setRecorderState] = 
     useState(initialState);
 
   const startRecording = async (setRecorderState) => {
     try {
+      // get audio stream
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
   
       setRecorderState((prevState) => {
         return {
           ...prevState,
-          initRecording: true,
+          isRecording: true,
           mediaStream: stream,
         };
       });
@@ -39,7 +40,7 @@ export default function useRecorder() {
     const MAX_RECORDER_TIME = 5;
     let recordingInterval = null;
 
-    if (recorderState.initRecording)
+    if (recorderState.isRecording)
       recordingInterval = setInterval(() => {
         setRecorderState((prevState) => {
           if (prevState.recordingMinutes === MAX_RECORDER_TIME &&
@@ -128,3 +129,5 @@ export default function useRecorder() {
     saveRecording: () => saveRecording(recorderState.mediaRecorder),
   };
 }
+
+export default useRecorder;
