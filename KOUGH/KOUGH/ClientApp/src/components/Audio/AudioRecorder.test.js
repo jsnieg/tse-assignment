@@ -23,6 +23,14 @@ const getCancelButton = () => {
   return screen.getByRole('button', { name: /cancel-button/i });
 }
 
+const getRecordingMinutes = () => {
+  return screen.getByLabelText('recording-minutes');
+}
+
+const getRecordingSeconds = () => {
+  return screen.getByLabelText('recording-seconds');
+}
+
 let mockRecorderState = {
   recordingMinutes: 0,
   recordingSeconds: 0,
@@ -48,19 +56,23 @@ describe('AudioRecorder', () => {
         handlers={mockHandlers} />
     );
 
-    // renders recording time 
+    // recording minutes container
     const recorderMins = getByLabelText(container, 'recording-minutes');
-    const recorderSecs = getByLabelText(container, 'recording-seconds');
     expect(recorderMins).toBeVisible();
+
+    // recording seconds container
+    const recorderSecs = getByLabelText(container, 'recording-seconds');
     expect(recorderSecs).toBeVisible();
   
+    // renders minutes
     const minutes = getByText(recorderMins, "00");
     expect(minutes).toBeVisible();
-
+    
+    // renders seconds
     const seconds = getByText(recorderSecs, "00");
     expect(seconds).toBeVisible();
   
-    // renders controls 
+    // renders controls
     const controls = getByLabelText(container, 'controls');
     expect(controls).toBeVisible();
   
@@ -68,13 +80,93 @@ describe('AudioRecorder', () => {
     const buttons = getAllByRole(container, 'button');
     expect(buttons).toHaveLength(1);
   
-    // renders start button 
+    // renders start button
     const startButton = getStartButton(container);
     expect(startButton).toBeVisible();
   
     // renders icon
     const startButtonIcon = getByLabelText(startButton, 'icon');
     expect(startButtonIcon).toBeVisible();
+  });
+
+  describe('time', () => {
+
+    describe('seconds', () => {
+
+      it('renders the units properly', () => {
+        mockRecorderState = {
+          ...mockRecorderState,
+          recordingSeconds: 5
+        }
+  
+        render(
+          <AudioRecorder 
+            recorderState={mockRecorderState}
+            handlers={mockHandlers} />
+        );
+
+        const seconds = getRecordingSeconds();
+        const units = getByText(seconds, '05');
+        
+        expect(units).toBeVisible();
+      });
+
+      it('renders the tens properly', () => {
+        mockRecorderState = {
+          ...mockRecorderState,
+          recordingSeconds: 14
+        }
+  
+        render(
+          <AudioRecorder 
+            recorderState={mockRecorderState}
+            handlers={mockHandlers} />
+        );
+
+        const seconds = getRecordingSeconds();
+        const units = getByText(seconds, '14');
+        
+        expect(units).toBeVisible();
+      });
+    });
+    
+    describe('minutes', () => {
+      it('renders the units properly', () => {
+        mockRecorderState = {
+          ...mockRecorderState,
+          recordingMinutes: 5
+        }
+  
+        render(
+          <AudioRecorder 
+            recorderState={mockRecorderState}
+            handlers={mockHandlers} />
+        );
+
+        const minutes = getRecordingMinutes();
+        const units = getByText(minutes, '05');
+        
+        expect(units).toBeVisible();
+      });
+
+      it('renders the tens properly', () => {
+        mockRecorderState = {
+          ...mockRecorderState,
+          recordingMinutes: 14
+        }
+  
+        render(
+          <AudioRecorder 
+            recorderState={mockRecorderState}
+            handlers={mockHandlers} />
+        );
+
+        const minutes = getRecordingMinutes();
+        const units = getByText(minutes, '14');
+        
+        expect(units).toBeVisible();
+      });
+    });
   });
 
   describe('control buttons', () => {
