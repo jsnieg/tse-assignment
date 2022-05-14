@@ -13,12 +13,11 @@ on:
     - main
     - develop
 
-defaults:
-    run:
-      working-directory: ./KOUGH/KOUGH/ClientApp
-
 jobs:
   build:
+    defaults:
+      run:
+        working-directory: ./KOUGH/KOUGH/ClientApp
 
     runs-on: ubuntu-latest
 
