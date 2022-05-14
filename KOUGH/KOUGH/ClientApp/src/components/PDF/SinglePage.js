@@ -27,8 +27,7 @@ const SinglePagePreviewPDF = (props) => {
                     }
                 ><Page pageNumber={1} />
                 </Document>
-                )
-            }
+            )}
         </div>
     );
 }
