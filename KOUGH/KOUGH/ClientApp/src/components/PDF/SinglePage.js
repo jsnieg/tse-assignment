@@ -9,7 +9,8 @@ const SinglePagePreviewPDF = (props) => {
     const isMobile = useMediaQuery({ query: `(max-width: 770px)` });
 
     return (
-        <div className='document-container'>
+        <div aria-label='doc-container'
+             className='document-container'>
             { isMobile ? (
                 <div>
                     <p>
