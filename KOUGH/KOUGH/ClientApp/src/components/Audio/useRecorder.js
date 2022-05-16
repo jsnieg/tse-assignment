@@ -37,7 +37,7 @@ const useRecorder = () => {
   }
 
   useEffect(() => {
-    const MAX_RECORDER_TIME = 1; //  branch: develop -> update lowered to 1
+    const MAX_RECORDER_TIME = 1; //  updated from 5 to 10
     let recordingInterval = null;
 
     if (recorderState.isRecording)
