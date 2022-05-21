@@ -1,6 +1,6 @@
 import React from 'react';
 import SinglePagePreviewPDF from './SinglePage';
-import samplePDF from '../../sample.pdf';
+import privacyPDF from '../../PrivacyPolicy.pdf';
 import {
     render, 
     screen,
@@ -30,7 +30,7 @@ describe('Single Page PDF Preview', () => {
     it('renders loading message when pdf is loading', async() => {
         const {container} = render(
             <SinglePagePreviewPDF 
-                pdf={samplePDF} />
+                pdf={privacyPDF} />
         );
  
         const docContainer = getByLabelText(container, 'doc-container');
@@ -47,7 +47,7 @@ describe('Single Page PDF Preview', () => {
     it('renders pdf once loaded', () => {
         render(
             <SinglePagePreviewPDF 
-                pdf={samplePDF} />
+                pdf={privacyPDF} />
         );
 
         // wait until pdf has loaded
