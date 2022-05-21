@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import SinglePagePreviewPDF from '../PDF/SinglePage';
-import samplePDF from '../../sample.pdf';
+import privacyPDF from '../../PrivacyPolicy.pdf';
 
 
 const Privacy = () => {
@@ -10,7 +10,7 @@ const Privacy = () => {
 
       <section id='pdf-preview-section'>
         <SinglePagePreviewPDF 
-          pdf={samplePDF}
+          pdf={privacyPDF}
         />
       </section>
     </div>
